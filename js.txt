@@ -1,0 +1,22 @@
+$(document).ready(function () {
+    $(".icon").click(function (e) {
+        $("div").addClass("show",5000)
+    });
+
+    $(".close").click(function (e) {
+        $("div").removeClass("show")
+    });
+
+    $(window).scroll(function () {
+        if (window.pageYOffset > 100) {
+            $("header").css("background-color", "#232628");
+        } else {
+            $("header").css("background-color", "transparent");
+        }
+    });
+
+    $(".wow").each(function () {
+        var wowHeight = $(this).height();
+        $(this).attr("data-wow-offset", wowHeight);
+    });
+});

@@ -1,0 +1,33 @@
+
+body {
+    direction: rtl;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: black;
+    height: 1000%;
+}
+
+
+.headerName h4,
+.headerName h5 {
+    border-bottom: 1px solid lightgray;
+    padding: 1rem 0;
+}
+
+.headerName h5 {
+    padding: 1.2rem 0;
+}
+
+.mainMenu {
+    margin-top: 8rem;
+    background-color: rgb(244, 244, 244);
+}
+
+.mainMenu p {
+    font-size: 18px;
+}
+
+.mainMenu .row {
+    border-top: 1px solid black;
+}

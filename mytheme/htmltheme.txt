@@ -1,0 +1,1056 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.rtl.min.css"
+        integrity="sha384-gXt9imSW0VcJVHezoNQsP+TNrjYXoGcrqBZJpry9zJt8PCQjobwmhMGaDHTASo9N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="cssAnimation/animate.css-main/animate.css">
+
+    <link rel="stylesheet" href="index.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <title>GoWilds</title>
+
+</head>
+
+<style>
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .swiper-slide img {
+        /* display: block; */
+        object-fit: cover;
+    }
+
+    .autoplay-progress {
+        position: absolute;
+        right: 16px;
+        bottom: 16px;
+        z-index: 10;
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        color: var(--swiper-theme-color);
+    }
+
+    .autoplay-progress svg {
+        --progress: 0;
+        position: absolute;
+        left: 0;
+        top: 0px;
+        z-index: 10;
+        width: 100%;
+        height: 100%;
+        stroke-width: 4px;
+        stroke: var(--swiper-theme-color);
+        fill: none;
+        stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
+        stroke-dasharray: 125.6;
+        transform: rotate(-90deg);
+    }
+
+    .bgBtnSlide {
+        color: white;
+        width: 60px;
+        height: 60px;
+        opacity: 0.5;
+    }
+
+    .bgBtnSlide:hover {
+        text-align: center;
+        border-radius: 50%;
+        background-color: #fd7e14;
+        color: white;
+        opacity: 1;
+    }
+
+
+    .swiper2 {
+        width: 100%;
+        height: 100%;
+    }
+
+    .swiper-slide-two {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .swiper-slide2 img {
+        display: block;
+        width: 80%;
+        height: 90%;
+        object-fit: cover;
+    }
+</style>
+
+<body>
+
+    <div>
+        <div class="">
+            <header class="position-fixed">
+                <div class="mainHeader container d-flex align-items-center justify-content-between d-none d-lg-flex">
+                    <div class="headerLogo">
+                        <a href="#"><img src="image/logo-white.png" alt=""></a>
+                    </div>
+                    <div class="headerItems">
+                        <ul class="d-flex menu">
+                            <li class="menu-item px-4">صفحه اصلی
+                                <i class="bi bi-caret-down-fill"></i>
+                                <section class="sub-menu p-0">
+                                    <ul class="d-block p-0">
+                                        <li>
+                                            <a href="#">صفحه 1</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">صفحه 2</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">صفحه 3</a>
+                                        </li>
+                                    </ul>
+                                </section>
+                            </li>
+
+                            <li class="menu-item px-4">تورها
+                                <i class="bi bi-caret-down-fill"></i>
+                                <section class="sub-menu p-0">
+                                    <ul class="d-block p-0">
+                                        <li>
+                                            <a href="#"> تورها</a>
+                                        </li>
+                                        <li>
+                                            <a href="#"> جزئیات تورها</a>
+                                        </li>
+                                    </ul>
+                                </section>
+                            </li>
+
+                            <li class="menu-item px-4">مقصد
+                                <i class="bi bi-caret-down-fill"></i>
+                                <section class="sub-menu p-0">
+                                    <ul class="d-block p-0">
+                                        <li>
+                                            <a href="#"> مقصدها</a>
+                                        </li>
+                                        <li>
+                                            <a href="#"> جزئیات مقصد</a>
+                                        </li>
+                                    </ul>
+                                </section>
+                            </li>
+
+                            <li class="menu-item px-4">بلاگ
+                                <i class="bi bi-caret-down-fill"></i>
+                                <section class="sub-menu p-0">
+                                    <ul class="d-block p-0">
+                                        <li>
+                                            <a href="#"> لیست بلاگ ها</a>
+                                        </li>
+                                        <li>
+                                            <a href="#"> جزئیات بلاگها</a>
+                                        </li>
+                                    </ul>
+                                </section>
+                            </li>
+
+                            <li class="menu-item px-4">صفحه ها
+                                <i class="bi bi-caret-down-fill"></i>
+                                <section class="sub-menu p-0">
+                                    <ul class="d-block p-0">
+                                        <li>
+                                            <a href="#"> درباره ما</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">گالری </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">رویدادها</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">جزئیات محصولات</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">تماس با ما </a>
+                                        </li>
+                                    </ul>
+                                </section>
+                            </li>
+
+
+                        </ul>
+                    </div>
+                    <div class="headerBtn rounded-pill">
+                        <span class="px-2">رزرو</span> <i class="bi bi-telegram"></i>
+                    </div>
+                </div>
+
+                <div class="d-flex d-lg-none align-items-center justify-content-between m-5 mobailMenu">
+                    <div class="leftMenu">
+                        <div class="icon">
+                            <i class="bi bi-list"></i>
+                        </div>
+
+                        <div class="menuListMobaile">
+                            <div class="mobailMenuDetail">
+                                <div class="close" style="color: red;">
+                                    <i class="bi bi-x-lg closeBtn"></i>
+                                </div>
+                                <section>
+                                    <ul>
+                                        <li><a href="#">صفحه اصلی</a></li>
+
+                                        <li><a href="#"> تورها</a></li>
+
+                                        <li><a href="#"> مقصد</a></li>
+
+                                        <li><a href="#"> بلاگ</a></li>
+
+                                        <li><a href="#"> صفحه ها</a></li>
+
+                                    </ul>
+                                </section>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="rightMenu">
+                        <img src="image/logo-white.png" alt="">
+                    </div>
+                </div>
+
+
+
+            </header>
+
+            <div class="firstBody">
+                <div class="container">
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper mt-4">
+                            <div class="swiper-slide">
+                                <div class="col-lg-6">
+                                    <img src="image/swiperbanner1.jpg" alt="" class="w-100 rounded-2">
+                                </div>
+                                <div class="d-none d-lg-inline-block col-lg-6 ">
+                                    <h1>سفر و کمپینگ<br>
+                                        <b class="mt-2">ماجراجویی</b>
+                                    </h1>
+                                    <div class="d-inline-block mt-5">
+                                        <p>سفری متفاوت با تجربه های فراموش نشدنی</p>
+                                        <small>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده
+                                            از
+                                            طراحان
+                                            گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم
+                                            است
+                                        </small>
+                                        <div class="headerBtn rounded-pill mt-5 d-inline-block wow animate__flash"
+                                            data-wow-duration="1s">
+                                            <span class="px-3">جستجوی بیشتر</span> <i
+                                                class="bi bi-telegram wow animate__flash" data-wow-duration="4s"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="col-lg-6">
+                                    <img src="image/swiperbanner2.jpg" alt="" class="w-100 rounded-2">
+                                </div>
+                                <div class="d-none d-lg-inline-block col-lg-6">
+                                    <h1>سفر و کمپینگ<br>
+                                        <b class="mt-2">ماجراجویی</b>
+                                    </h1>
+                                    <div class="d-inline-block mt-5">
+                                        <p>سفری متفاوت با تجربه های فراموش نشدنی</p>
+                                        <small>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده
+                                            از
+                                            طراحان
+                                            گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم
+                                            است
+                                        </small>
+                                        <div class="headerBtn rounded-pill mt-5 d-inline-block">
+                                            <span class="px-3">جستجوی بیشتر</span> <i class="bi bi-telegram"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-button-next bgBtnSlide"></div>
+                        <div class="swiper-button-prev bgBtnSlide"></div>
+                        <div class="swiper-pagination d-none"></div>
+                        <div class="autoplay-progress d-none">
+                            <svg viewBox="0 0 48 48" class="d-none">
+                                <circle cx="24" cy="24" r="20"></circle>
+                            </svg>
+                            <span class="d-none"></span>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column align-items-center justify-content-center d-lg-none">
+                        <h1>سفر و کمپینگ
+                            ماجراجویی
+                        </h1>
+                        <div class="d-flex flex-column align-items-center justify-content-center mt-5">
+                            <h6>سفری متفاوت با تجربه های فراموش نشدنی</h6>
+                            <small class="mt-3">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده
+                                از
+                            </small>
+                            <div class="headerBtn rounded-pill mt-5 mb-5 d-inline-block">
+                                <span>جستجوی بیشتر</span> <i class="bi bi-telegram"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="secondBody mt-5">
+
+                <div class="info wow animate__backInDown" data-wow-duration="1s">
+                    <span>درباره ما</span>
+                    <h3 class="mt-5">ما سرگرم کننده ترین شرکت در مورد سفر و تور هستیم</h3>
+                    <small class="mt-5">
+                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است،
+                        چاپگرها
+                    </small>
+                </div>
+                <div class="secondSlider wow animate__slideInDown d-flex flex-column flex-lg-row container mt-5 align-items-center justify-content-center"
+                    data-wow-duration="1s">
+                    <div class="slider2 px-5 my-5 ">
+                        <img src="image/slider2-1.jpg" alt="" class="rounded-5">
+                        <div class="card-info rounded-3">
+                            <div class="bt mb-3"></div>
+                            <h5 class="mb-3">
+                                <i class="bi bi-arrow-right-circle"></i>
+                                کابین های 2نفره
+                            </h5>
+                            <small>
+                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک
+                                است
+                            </small>
+                        </div>
+                    </div>
+
+                    <div class="slider2 px-5 my-5">
+                        <img src="image/slider2-2.jpg" alt="">
+                        <div class="card-info">
+                            <div class="bt mb-3"></div>
+                            <h5 class="mb-3">
+                                <i class="bi bi-arrow-right-circle"></i>
+                                کابین های 2نفره
+                            </h5>
+                            <small>
+                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک
+                                است
+                            </small>
+                        </div>
+                    </div>
+
+                    <div class="slider2 px-5 my-5 ">
+                        <img src="image/slider2-3.jpg" alt="">
+                        <div class="card-info">
+                            <div class="bt mb-3"></div>
+                            <h5 class="mb-3">
+                                <i class="bi bi-arrow-right-circle"></i>
+                                کابین های 2نفره
+                            </h5>
+                            <small>
+                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک
+                                است
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="thirdBody d-flex align-items-center justify-content-around">
+                <div class="row">
+                    <div class="col-6 d-none d-lg-inline-block">
+                        <img src="image/banner2.jpg" alt="">
+                    </div>
+                    <div class="col-12 col-lg-6 bookInfo">
+                        <h1 class="mb-4">رزرو کمپ مورد نظرتان</h1>
+                        <div class="info_book1">
+                            <div class="d-inline-block dateClass wow animate__bounceIn" data-wow-duration="0.25s">
+                                <label for="">تاریخ رفت</label>
+                                <input type="date" name="" id="">
+                            </div>
+                            <div class="d-inline-block dateClass wow animate__bounceIn" data-wow-duration="0.5s">
+                                <label for="">تاریخ برگشت</label>
+                                <input type="date" name="" id="">
+                            </div>
+                        </div>
+                        <div class="info_book2">
+                            <div class="d-inline-block dateClass wow animate__bounceIn" data-wow-duration="0.75s">
+                                <label for="">مهمان</label>
+                                <input type="text">
+                            </div>
+                        </div>
+                        <div class="info_book3 wow animate__bounceIn" data-wow-duration="1s">
+                            <textarea name="" id="" cols="80" rows="5" placeholder="کامنت..."></textarea>
+                        </div>
+                        <div class="headerBtn rounded-3 w-50 mt-5 wow animate__flash" data-wow-duration="5s">
+                            <i class="bi bi-chevron-right"></i>
+                            <span class="px-2">
+                                رزرو
+                            </span>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="fourthBody bg-dark text-light d-flex flex-column align-items-center justify-content-center text-center">
+                <div class="fourthHeader mt-5 wow animate__slideInDown" data-wow-duration="1.2s">
+                    <span class="rounded-2">فعالیت ها</span>
+                    <h2 class="mt-5">احساس ماجراجویی واقعی</h2>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-lg-4 mb-5 d-none d-lg-inline-block wow animate__pulse" data-wow-duration="1.2s">
+                        <img src="image/forth1.jpg" alt="" class="rounded-3">
+                    </div>
+                    <div class="col-lg-4 text-center d-flex flex-column align-items-center justify-content-center mb-5">
+                        <div class="d-flex mb-4 wow animate__jello" data-wow-duration="1.2s">
+                            <i class="bi bi-tree" style="font-size: 50px;"></i>
+                            <i class="bi bi-tree" style="font-size: 40px;"></i>
+                            <i class="bi bi-tree" style="font-size: 30px;"></i>
+                        </div>
+
+                        <h4 class="mb-5 p-5">
+                            ماجراجویی واقعی <br> از تورهای رویایی خود لذت ببرید
+                        </h4>
+                        <small class="mb-5">
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است
+                        </small>
+                        <h6 class="p-2 wow animate__bounceInDown" data-wow-duration="1s" data-wow-delay="0.25s">
+                            <i class="bi bi-check-circle" style="font-size: 20px;"></i>
+                            کمپ در حیات وحش
+                        </h6>
+                        <h6 class="p-2 wow animate__bounceInDown" data-wow-duration="1s" data-wow-delay="0.5s">
+                            <i class="bi bi-check-circle" style="font-size: 20px;"></i>
+                            کمپ خانوادگی
+                        </h6>
+                        <h6 class="p-2 wow animate__bounceInDown" data-wow-duration="1s" data-wow-delay="0.75s">
+                            <i class="bi bi-check-circle" style="font-size: 20px;"></i>
+                            کمپ زوج ها
+                        </h6>
+                    </div>
+                    <div
+                        class="col-12 col-lg-4 text-center d-flex flex-column align-items-center justify-content-center mb-5  rounded-2 leftDiv ">
+                        <div class="wow animate__flash" data-wow-duration="1.2s">
+                            <h5 class="p-3">دوچرخه سواری در کوهستان</h5>
+                            <h5 class="p-3">تماشای پرندگان</h5>
+                            <h5 class="p-3">ماهی گیری</h5>
+                            <h5 class="p-3">کوهنوردی</h5>
+                            <h5 class="p-3">چادر زدن</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="fivethBody text-center d-flex flex-column">
+                <div class="titleInfo wow animate__slideInDown" data-wow-duration="1s">
+                    <small class="rounded-2">خدمات محبوب</small>
+                    <h3 class="mt-5">ماجراجویی شگفت انگیز برای لذت بردن</h3>
+                </div>
+                <div class="sliderBodyFive mt-5">
+
+                    <div class="swiper mySwiper2 wow animate__bounceInRight" data-wow-duration="1.5s">
+                        <div class="swiper-wrapper container">
+                            <div class="swiper-slide" style="width: 30%;">
+                                <div
+                                    class="swiper-slide d-flex flex-column cartSlider align-items-center justify-content-between">
+                                    <h5 class="mt-1">RV Luxury Tent</h5>
+                                    <small class="mt-3">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+                                        چاپ</small>
+                                    <div class="icons mt-5 d-none d-lg-inline-block">
+                                        <i class="bi bi-cup-hot"></i>
+                                        <i class="bi bi-fire"></i>
+                                        <i class="bi bi-music-note-beamed"></i>
+                                        <i class="bi bi-tree"></i>
+                                        <i class="bi bi-wifi"></i>
+                                    </div>
+                                    <div class="cartImage mt-5">
+                                        <div class="arrowCart d-none d-lg-flex">
+                                            <a href="#"><i class="bi bi-arrow-right"></i></a>
+                                        </div>
+                                        <img src="image/slider5-1.jpg" alt="" class="mb-3 rounded-2">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide" style="width: 30%;">
+                                <div
+                                    class="swiper-slide d-flex flex-column cartSlider align-items-center justify-content-between">
+                                    <h5 class="mt-1">RV Luxury Tent</h5>
+                                    <small class="mt-3">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+                                        چاپ</small>
+                                    <div class="icons mt-5 d-none d-lg-inline-block">
+                                        <i class="bi bi-cup-hot"></i>
+                                        <i class="bi bi-fire"></i>
+                                        <i class="bi bi-music-note-beamed"></i>
+                                        <i class="bi bi-tree"></i>
+                                        <i class="bi bi-wifi"></i>
+                                    </div>
+                                    <div class="cartImage mt-5">
+                                        <div class="arrowCart d-none d-lg-flex">
+                                            <a href="#"><i class="bi bi-arrow-right"></i></a>
+                                        </div>
+                                        <img src="image/slider5-2.jpg" alt="" class="mb-3 rounded-2">
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="swiper-slide" style="width: 30%;">
+                                <div
+                                    class="swiper-slide d-flex flex-column cartSlider align-items-center justify-content-between">
+                                    <h5 class="mt-1">RV Luxury Tent</h5>
+                                    <small class="mt-3">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+                                        چاپ</small>
+                                    <div class="icons mt-5 d-none d-lg-inline-block">
+                                        <i class="bi bi-cup-hot"></i>
+                                        <i class="bi bi-fire"></i>
+                                        <i class="bi bi-music-note-beamed"></i>
+                                        <i class="bi bi-tree"></i>
+                                        <i class="bi bi-wifi"></i>
+                                    </div>
+                                    <div class="cartImage mt-5">
+                                        <div class="arrowCart d-none d-lg-flex">
+                                            <a href="#"><i class="bi bi-arrow-right"></i></a>
+                                        </div>
+                                        <img src="image/slider5-3.jpg" alt="" class="mb-3 rounded-2">
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="swiper-slide" style="width: 30%;">
+                                <div
+                                    class="swiper-slide d-flex flex-column cartSlider align-items-center justify-content-between">
+                                    <h5 class="mt-1">RV Luxury Tent</h5>
+                                    <small class="mt-3">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+                                        چاپ</small>
+                                    <div class="icons mt-5 d-none d-lg-inline-block">
+                                        <i class="bi bi-cup-hot"></i>
+                                        <i class="bi bi-fire"></i>
+                                        <i class="bi bi-music-note-beamed"></i>
+                                        <i class="bi bi-tree"></i>
+                                        <i class="bi bi-wifi"></i>
+                                    </div>
+                                    <div class="cartImage mt-5">
+                                        <div class="arrowCart d-none d-lg-flex">
+                                            <a href="#"><i class="bi bi-arrow-right"></i></a>
+                                        </div>
+                                        <img src="image/slider5-4.jpg" alt="" class="mb-3 rounded-2">
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="swiper-slide" style="width: 30%;">
+                                <div
+                                    class="swiper-slide d-flex flex-column cartSlider align-items-center justify-content-between">
+                                    <h5 class="mt-1">RV Luxury Tent</h5>
+                                    <small class="mt-3">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+                                        چاپ</small>
+                                    <div class="icons mt-5 d-none d-lg-inline-block">
+                                        <i class="bi bi-cup-hot"></i>
+                                        <i class="bi bi-fire"></i>
+                                        <i class="bi bi-music-note-beamed"></i>
+                                        <i class="bi bi-tree"></i>
+                                        <i class="bi bi-wifi"></i>
+                                    </div>
+                                    <div class="cartImage mt-5">
+                                        <div class="arrowCart d-none d-lg-flex">
+                                            <a href="#"><i class="bi bi-arrow-right"></i></a>
+                                        </div>
+                                        <img src="image/slider5-1.jpg" alt="" class="mb-3 rounded-2">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+
+                </div>
+                <div class="secondMenuFive bg-light mt-5 h-100 w-100 mb-5">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-4 p-5 desCard">
+                                <div class="icon  wow animate__flash" data-wow-duration="5s">
+                                    <i class="bi bi-house-lock"></i>
+                                </div>
+                                <div class="title">
+                                    <h4>امنیت بالا</h4>
+                                    <small>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</small>
+                                </div>
+                            </div>
+
+                            <div class="col-4 p-5 desCard">
+                                <div class="icon  wow animate__flash" data-wow-duration="6s">
+                                    <i class="bi bi-wifi"></i>
+                                </div>
+                                <div class="title">
+                                    <h4>اینترنت رایگان</h4>
+                                    <small>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</small>
+                                </div>
+                            </div>
+
+
+                            <div class="col-4 p-5 desCard">
+                                <div class="icon  wow animate__flash" data-wow-duration="7s">
+                                    <i class="bi bi-sun"></i>
+                                </div>
+                                <div class="title">
+                                    <h4>انرژی خورشیدی</h4>
+                                    <small>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4 p-5 desCard">
+                                <div class="icon  wow animate__flash" data-wow-duration="8s">
+                                    <i class="bi bi-bicycle"></i>
+                                </div>
+                                <div class="title">
+                                    <h4>دوچرخه سواری در کوهستان</h4>
+                                    <small>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</small>
+                                </div>
+                            </div>
+
+
+                            <div class="col-4 p-5 desCard">
+                                <div class="icon  wow animate__flash" data-wow-duration="9s">
+                                    <i class="bi bi-water"></i>
+                                </div>
+                                <div class="title">
+                                    <h4>ماهیگیری و شنا</h4>
+                                    <small>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</small>
+                                </div>
+                            </div>
+
+
+                            <div class="col-4 p-5 desCard">
+                                <div class="icon  wow animate__flash" data-wow-duration="10s">
+                                    <i class="bi bi-smartwatch"></i>
+                                </div>
+                                <div class="title">
+                                    <h4>ورزش و یوگا</h4>
+                                    <small>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="sixthBody">
+                <div class="sixthMain text-center">
+                    <h3 class="text-light"> سفری همراه با ماجراجویی و لذت بردن از طبیعت</h3>
+                    <div class="headerBtn rounded-pill myBtn wow animate__heartBeat" data-wow-duration="2s">
+                        <span class="px-2"> آماده رزرو</span> <i class="bi bi-telegram"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="seventhBody pt-5">
+                <div class="container w-100 h-75">
+                    <div class="row d-flex align-items-center justify-content-between">
+                        <div class="wow animate__fadeInDown col d-flex flex-column align-items-center justify-content-around px-1 py-5 mx-1 sevenCart"
+                            data-wow-duration="1.5s" data-wow-delay="0.1s">
+                            <div class="icon">
+                                <i class="bi bi-gift"></i>
+                            </div>
+                            <div class="numberInfo">
+                                <h2 class="pt-5">63K</h2>
+                                <p class="pt-5 text-center">جوایز</p>
+                            </div>
+                        </div>
+                        <div class="wow animate__fadeInDown col d-flex flex-column align-items-center justify-content-between px-1 py-5 mx-1 sevenCart"
+                            data-wow-duration="1.5s" data-wow-delay="0.5s">
+                            <div class="icon">
+                                <i class="bi bi-star"></i>
+                            </div>
+                            <div class="numberInfo">
+                                <h2 class="pt-5">99.3%</h2>
+                                <p class="pt-5 text-center">نظرات مثبت</p>
+                            </div>
+                        </div>
+                        <div class="wow animate__fadeInDown col d-flex flex-column align-items-center justify-content-between px-1 py-5 mx-1 sevenCart"
+                            data-wow-duration="1.5s" data-wow-delay="1s">
+                            <div class="icon">
+                                <i class="bi bi-person-hearts"></i>
+                            </div>
+                            <div class="numberInfo">
+                                <h2 class="pt-5">3568+</h2>
+                                <p class="pt-5 text-center">رضایت مسافران</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="eightBody">
+                <div class="InfoEight d-flex align-items-center justify-content-center flex-column wow animate__bounceIn"
+                    data-wow-duration="1s">
+                    <p>درباره ما</p>
+                    <h1 class="mt-4">آنچه باید در مورد خدمات تور ما بدانید </h1>
+                </div>
+
+                <div class="eightSlider mt-5">
+                    <div class="row">
+
+                        <div class="sliderRight col-12 col-lg-6 mt-3 wow animate__backInRight" data-wow-duration="1s">
+                            <div class="swiper mySwiper mt-3">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="sideSlider">
+                                            <div class="Infoslider">
+                                                <p class="mt-4">کیفیت خدمات</p>
+                                                <div class="quality mt-3">
+                                                    <i class="bi bi-star"></i>
+                                                    <i class="bi bi-star"></i>
+                                                    <i class="bi bi-star"></i>
+                                                    <i class="bi bi-star"></i>
+                                                    <i class="bi bi-star"></i>
+                                                </div>
+                                            </div>
+                                            <div class="sliderPara mt-3">
+                                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
+                                                    استفاده
+                                                    از
+                                                    طراحان
+                                                    گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان
+                                                    که
+                                                    لازم
+                                                    است،
+                                                    و
+                                                    برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود
+                                                    ابزارهای
+                                                    کاربردی
+                                                    می باشد
+                                                </p>
+                                            </div>
+                                            <div
+                                                class="infoBoos d-flex flex-column align-items-center justify-content-center">
+                                                <img src="image/owner.jpg" alt="">
+                                                <div class="ownerInfo">
+                                                    <p>نام/نام خانوادگی</p>
+                                                    <small>مدیرعامل</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="sideSlider">
+                                            <div class="Infoslider">
+                                                <p class="mt-4">کیفیت خدمات</p>
+                                                <div class="quality mt-3">
+                                                    <i class="bi bi-star"></i>
+                                                    <i class="bi bi-star"></i>
+                                                    <i class="bi bi-star"></i>
+                                                    <i class="bi bi-star"></i>
+                                                    <i class="bi bi-star"></i>
+                                                </div>
+                                            </div>
+                                            <div class="sliderPara mt-3">
+                                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
+                                                    استفاده
+                                                    از
+                                                    طراحان
+                                                    گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان
+                                                    که
+                                                    لازم
+                                                    است،
+                                                    و
+                                                    برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود
+                                                    ابزارهای
+                                                    کاربردی
+                                                    می باشد
+                                                </p>
+                                            </div>
+                                            <div
+                                                class="infoBoos d-flex flex-column align-items-center justify-content-center">
+                                                <img src="https://img.freepik.com/free-photo/handsome-confident-smiling-man-with-hands-crossed-chest_176420-18743.jpg"
+                                                    alt="">
+                                                <div class="ownerInfo">
+                                                    <p>نام/نام خانوادگی</p>
+                                                    <small>مدیرعامل</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="swiper-slide">
+                                        <div class="sideSlider">
+                                            <div class="Infoslider">
+                                                <p class="mt-4">کیفیت خدمات</p>
+                                                <div class="quality mt-3">
+                                                    <i class="bi bi-star"></i>
+                                                    <i class="bi bi-star"></i>
+                                                    <i class="bi bi-star"></i>
+                                                    <i class="bi bi-star"></i>
+                                                    <i class="bi bi-star"></i>
+                                                </div>
+                                            </div>
+                                            <div class="sliderPara mt-3">
+                                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
+                                                    استفاده
+                                                    از
+                                                    طراحان
+                                                    گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان
+                                                    که
+                                                    لازم
+                                                    است،
+                                                    و
+                                                    برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود
+                                                    ابزارهای
+                                                    کاربردی
+                                                    می باشد
+                                                </p>
+                                            </div>
+                                            <div
+                                                class="infoBoos d-flex flex-column align-items-center justify-content-center">
+                                                <img src="https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?w=2000"
+                                                    alt="">
+                                                <div class="ownerInfo">
+                                                    <p>نام/نام خانوادگی</p>
+                                                    <small>مدیرعامل</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-pagination d-none"></div>
+                            </div>
+                        </div>
+
+                        <div class="sliderLeft d-none d-lg-inline-flex col-lg-6">
+                            <img src="image/eightSection.jpg" alt="" class="rounded-3">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="nineBody d-flex flex-column align-items-center justify-content-center mb-5">
+                <div class="info mt-5 wow animate__bounceIn" data-wow-duration="1s">
+                    <span>اخبار و وبلاگ</span>
+                    <h1 class="mt-5">آخرین و بروزترین اخبار</h1>
+                </div>
+                <div
+                    class="secondSlider d-flex flex-column flex-lg-row container mt-5 align-items-center justify-content-center">
+                    <div class="slider2 px-5">
+                        <div class="imageCartNine">
+                            <img src="image/section9-1.jpg" alt="" class="rounded-3">
+                            <h5 class="rounded-2 wow animate__flash" data-wow-duration="5s">ماجراجویی</h5>
+                        </div>
+                        <p class="date mt-5">25 اردیبهشت 1401 <i class="bi bi-calendar3"></i></p>
+                        <h4 class="mt-4 p-2">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</h4>
+                        <div class="Btn rounded-pill mt-4">
+                            <span class="px-2"> بیشتر بخوانید <i class="bi bi-telegram"></i></span>
+                        </div>
+                    </div>
+
+                    <div class="slider2  px-5">
+                        <div class="imageCartNine">
+                            <img src="image/section9-2.jpg" alt="" class="rounded-3">
+                            <h5 class="rounded-2 wow animate__flash" data-wow-duration="7s">ماجراجویی</h5>
+                        </div>
+                        <p class="date mt-5">25 دی 1401 <i class="bi bi-calendar3"></i></p>
+                        <h4 class="mt-4 p-2">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</h4>
+                        <div class="Btn rounded-pill mt-4">
+                            <span class="px-2"> بیشتر بخوانید <i class="bi bi-telegram"></i></span>
+                        </div>
+                    </div>
+
+                    <div class="slider2 px-5">
+                        <div class="imageCartNine">
+                            <img src="image/section9-3.jpg" alt="" class="rounded-3">
+                            <h5 class="rounded-2 wow animate__flash" data-wow-duration="9s">ماجراجویی</h5>
+                        </div>
+                        <p class="date mt-5">25 خرداد 1401 <i class="bi bi-calendar3"></i></p>
+                        <h4 class="mt-4 p-2">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</h4>
+                        <div class="Btn rounded-pill mt-4">
+                            <span class="px-2"> بیشتر بخوانید <i class="bi bi-telegram"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <footer class=" d-flex flex-column bg-dark text-light ">
+                <div class="row h-100 firstRow mx-3">
+                    <div class="col-12 col-lg-2 gap-10 text-center my-3 my-lg-0">
+                        <div class="socialMedia wow animate__flash" data-wow-duration="5s">
+                            <i class="bi bi-facebook"></i>
+                            <i class="bi bi-twitter"></i>
+                            <i class="bi bi-instagram"></i>
+                            <i class="bi bi-linkedin"></i>
+                        </div>
+                    </div>
+                    <div
+                        class="my-3 my-lg-0 col-lg-10 col-12 d-flex flex-column flex-lg-row align-items-center justify-content-between mb-3">
+                        <div class="location d-flex">
+                            <i class="bi bi-pin-map-fill"></i>
+                            <div class="info">
+                                <h6>آدرس</h6>
+                                <span>55 Main Street, Australia</span>
+                            </div>
+                        </div>
+                        <div class="email d-flex">
+                            <i class="bi bi-mailbox"></i>
+                            <div class="info">
+                                <h6>ایمیل</h6>
+                                <span>support@gmail.com</span>
+                            </div>
+                        </div>
+                        <div class="hotline d-flex">
+                            <i class="bi bi-phone-vibrate"></i>
+                            <div class="info">
+                                <h6>هات لاین</h6>
+                                <span>+000 (123) 456 898</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row secondRow mx-2 d-flex flex-column flex-lg-row">
+                    <div class="col about">
+                        <h5>درباره ما</h5>
+                        <p class="mt-3">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپلورم ایپسوم متن ساختگی
+                            با
+                            تولید
+                            سادگی
+                            نامفهوم از صنعت چاپ</p>
+                    </div>
+                    <div class="col services">
+                        <h5>خدمات ما</h5>
+                        <p class="mt-3">چادر خورشیدی</p>
+                        <p class="mt-3">چادر خانوادگی</p>
+                        <p class="mt-3">چادر کلاسیک</p>
+                        <p class="mt-3">چادر در حیات وحش</p>
+                        <p class="mt-3">کابین چوبی</p>
+                    </div>
+                    <div class="col news">
+                        <h5>خبرنامه</h5>
+                        <p class="mt-3">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</p>
+                        <div class="inputDiv mb-3 mb-lg-0">
+                            <i class="bi bi-cursor-fill"></i>
+                            <input type="email" placeholder="Email Address" class="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="thirdRow">
+                    <h6>Copy@ 2023 <span>GoWilds</span>, All Right Reserved</h6>
+                </div>
+            </footer>
+        </div>
+
+
+    </div>
+</body>
+
+
+<script src="wow/WOW-master/dist/wow.min.js"></script>
+<script>
+    new WOW().init();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script src="script.js"></script>
+<script>
+    const progressCircle = document.querySelector(".autoplay-progress svg");
+    const progressContent = document.querySelector(".autoplay-progress span");
+    var swiper = new Swiper(".mySwiper", {
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev"
+        },
+        on: {
+            autoplayTimeLeft(s, time, progress) {
+                progressCircle.style.setProperty("--progress", 1 - progress);
+                progressContent.textContent = `${Math.ceil(time / 1000)}s`;
+            }
+        }
+    });
+
+
+    // swiper2
+
+
+    var swiper = new Swiper(".mySwiper2", {
+        slidesPerView: "auto",
+        spaceBetween: 50,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+    });
+
+    // swiper 3
+    var swiper = new Swiper(".mySwiper", {
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+            delay: 4000,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+
+    // swiper 6
+    var swiper = new Swiper(".mySwiper6", {
+        slidesPerView: "auto",
+        spaceBetween: -300,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+    });
+</script>
+
+
+
+</html>
